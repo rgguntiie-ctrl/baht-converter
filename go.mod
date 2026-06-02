@@ -1,4 +1,4 @@
-module github.com/assignment/bath-converter
+module github.com/rgguntiie-ctrl/baht-converter
 
 go 1.23.4
 

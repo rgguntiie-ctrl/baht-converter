@@ -17,7 +17,7 @@
 
 ```bash
 # 1. Clone project
-git clone https://github.com/yourusername/baht-converter
+git clone https://github.com/rgguntiie-ctrl/baht-converter
 cd baht-converter
 
 # 2. Download dependencies
