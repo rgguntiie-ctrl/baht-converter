@@ -68,8 +68,12 @@ func DecimalToThaiText(amount decimal.Decimal) string {
 	intPart := amount.Floor()
 	fracPart := amount.Sub(intPart).Mul(decimal.NewFromInt(100)).Round(0)
 
-	result := convertGroup(intPart.IntPart()) + "บาท"
+	intText := convertGroup(intPart.IntPart())
+	if intText == "" {
+		intText = "ศูนย์"
+	}
 
+	result := intText + "บาท"
 	if fracPart.IntPart() == 0 {
 		result += "ถ้วน"
 	} else {
