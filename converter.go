@@ -19,7 +19,15 @@ func convertGroup(n int64) string {
 	if n == 0 {
 		return ""
 	}
-
+	if n >= 1_000_000 {
+		millions := n / 1_000_000
+		remainder := n % 1_000_000
+		result := convertGroup(millions) + "ล้าน"
+		if remainder > 0 {
+			result += convertGroup(remainder)
+		}
+		return result
+	}
 	var digits []int64
 	tmp := n
 	for tmp > 0 {
@@ -32,6 +40,11 @@ func convertGroup(n int64) string {
 		pos := len(digits) - 1 - i
 
 		if d == 0 {
+			continue
+		}
+
+		if pos == 1 && d == 1 {
+			parts = append(parts, "สิบ")
 			continue
 		}
 

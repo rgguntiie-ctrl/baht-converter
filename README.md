@@ -36,3 +36,25 @@ baht-converter/
 ├── go.mod
 └── go.sum
 ```
+
+## HTTP API
+
+### POST /convert
+
+**Request:**
+```json
+{"amount": "33333.75"}
+```
+
+**Response:**
+```json
+{
+  "amount": "33333.75",
+  "text": "สามหมื่นสามพันสามร้อยสามสิบสามบาทเจ็ดสิบห้าสตางค์"
+}
+```
+
+### GET /health
+```json
+{"status":"ok"}
+```
